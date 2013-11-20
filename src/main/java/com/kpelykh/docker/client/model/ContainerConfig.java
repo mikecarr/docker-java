@@ -34,6 +34,7 @@ public class ContainerConfig {
     @JsonProperty("NetworkDisabled") private boolean networkDisabled = false;
     @JsonProperty("Privileged")   private boolean privileged = false;
     @JsonProperty("WorkingDir")   private String workingDir = "";
+    @JsonProperty("Domainname")   private String domainName = "";
 
 
     public String getWorkingDir() {
@@ -212,6 +213,14 @@ public class ContainerConfig {
         this.entrypoint = entrypoint;
     }
 
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
     @Override
     public String toString() {
         return "ContainerConfig{" +
@@ -234,6 +243,7 @@ public class ContainerConfig {
                 ", volumes=" + volumes +
                 ", volumesFrom='" + volumesFrom + '\'' +
                 ", entrypoint='" + Arrays.toString(portSpecs) +
+                ", domainName='" + domainName +
                 '}';
     }
 }

@@ -25,6 +25,8 @@ public class ContainerInspectResponse {
     @JsonProperty("ResolvConfPath") public String resolvConfPath;
     @JsonProperty("Volumes") public Map<String, String> volumes;
     @JsonProperty("VolumesRW") public Map<String, String> volumesRW;
+    @JsonProperty("HostnamePath") public String hostnamePath;
+    @JsonProperty("HostsPath") public String hostsPath;
 
     @Override
     public String toString() {
@@ -41,6 +43,8 @@ public class ContainerInspectResponse {
                 ", state=" + state +
                 ", image='" + image + '\'' +
                 ", networkSettings=" + networkSettings +
+                ", hostnamePath=" + hostnamePath +
+                ", hostsPath=" + hostsPath +
                 '}';
     }
 
@@ -59,6 +63,7 @@ public class ContainerInspectResponse {
         @JsonProperty("Pid") public int pid;
         @JsonProperty("ExitCode") public int exitCode;
         @JsonProperty("StartedAt") public String startedAt;
+        @JsonProperty("FinishedAt") public String finishedAt;
         @JsonProperty("Ghost") public boolean ghost;
 
         @Override
@@ -68,6 +73,7 @@ public class ContainerInspectResponse {
                     ", pid=" + pid +
                     ", exitCode=" + exitCode +
                     ", startedAt='" + startedAt + '\'' +
+                    ", finishedAt='" + finishedAt + '\'' +
                     ", ghost=" + ghost +
                     '}';
         }
